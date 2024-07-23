@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFETY PEN DECISION MAKER</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SAFETY PEN DECISION MAKER</h1>
+        <form id="riskForm">
+            <fieldset>
+                <legend>Patient Information</legend>
+                <div class="question">
+                    <label for="age">Age:</label>
+                    <select id="age" name="age" required>
+                        <option value="">Select...</option>
+                        <option value="under16">Under 16</option>
+                        <option value="over16">16 and Over</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="indexPenicillin">Do you remember the index penicillin?</label>
+                    <select id="indexPenicillin" name="indexPenicillin" required>
+                        <option value="">Select...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="question" id="antibioticType" style="display:none;">
+                    <label for="antibiotic">What was the antibiotic?</label>
+                    <select id="antibiotic" name="antibiotic" required>
+                        <option value="">Select...</option>
+                        <option value="amoxicillin">Amoxicillin</option>
+                        <option value="amoxicillinClavulanate">Amoxicillin-Clavulanate</option>
+                        <option value="phenoxymethylpenicillin">Phenoxymethylpenicillin</option>
+                        <option value="benzylpenicillin">Benzylpenicillin (IV)</option>
+                        <option value="piperacillinTazobactam">Piperacillin-Tazobactam (IV)</option>
+                        <option value="ampicillin">Ampicillin</option>
+                        <option value="dicloxacillin">Dicloxacillin</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Reaction Details</legend>
+                <div class="question">
+                    <label for="reactionTime">When did the reaction occur?</label>
+                    <select id="reactionTime" name="reactionTime" required>
+                        <option value="">Select...</option>
+                        <option value="within1year">Within the last year</option>
+                        <option value="morethan1year">More than one year ago</option>
+                        <option value="morethan5years">More than five years ago</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Anaphylaxis Symptoms</legend>
+                <div class="question">
+                    <label for="generalSymptoms">General Symptoms:</label>
+                    <select id="generalSymptoms" name="generalSymptoms" multiple required>
+                        <option value="sweating">Sweating</option>
+                        <option value="paleSkin">Pale or blue skin color</option>
+                        <option value="chills">Chills</option>
+                        <option value="lightheaded">Feeling lightheaded or faint</option>
+                        <option value="noneGeneral">None</option>
+                        <option value="cannotRememberGeneral">Cannot remember</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="respiratorySymptoms">Respiratory Symptoms:</label>
+                    <select id="respiratorySymptoms" name="respiratorySymptoms" multiple required>
+                        <option value="shortBreath">Shortness of breath</option>
+                        <option value="wheezing">Wheezing</option>
+                        <option value="coughing">Coughing</option>
+                        <option value="difficultyBreathing">Difficulty breathing</option>
+                        <option value="throatTightness">Throat tightness</option>
+                        <option value="hoarseness">Hoarseness</option>
+                        <option value="troubleSwallowing">Trouble swallowing</option>
+                        <option value="runnyNose">Runny or stuffy nose</option>
+                        <option value="swellingTongue">Swelling of the tongue and throat</option>
+                        <option value="noneRespiratory">None</option>
+                        <option value="cannotRememberRespiratory">Cannot remember</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="cardioSymptoms">Cardiovascular Symptoms:</label>
+                    <select id="cardioSymptoms" name="cardioSymptoms" multiple required>
+                        <option value="rapidPulse">Rapid or weak pulse</option>
+                        <option value="palpitations">Palpitations</option>
+                        <option value="lowBP">Low blood pressure</option>
+                        <option value="dizziness">Dizziness or fainting</option>
+                        <option value="noneCardio">None</option>
+                        <option value="cannotRememberCardio">Cannot remember</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="cnsSymptoms">Central Nervous System Symptoms:</label>
+                    <select id="cnsSymptoms" name="cnsSymptoms" multiple required>
+                        <option value="anxiety">Anxiety</option>
+                        <option value="confusion">Confusion</option>
+                        <option value="senseDoom">Sense of impending doom</option>
+                        <option value="lossConsciousness">Loss of consciousness</option>
+                        <option value="noneCNS">None</option>
+                        <option value="cannotRememberCNS">Cannot remember</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Other Symptoms</legend>
+                <div class="question">
+                    <label for="cutaneous">Cutaneous symptoms:</label>
+                    <div>
+                        <input type="checkbox" id="urticaria" name="cutaneous" value="urticaria">
+                        <label for="urticaria">Urticaria (hives)</label>
+                        <input type="checkbox" id="pruritus" name="cutaneous" value="pruritus">
+                        <label for="pruritus">Pruritus</label>
+                        <input type="checkbox" id="nonspecificRash" name="cutaneous" value="nonspecificRash">
+                        <label for="nonspecificRash">Non-specific rash</label>
+                        <input type="checkbox" id="mpRash" name="cutaneous" value="mpRash">
+                        <label for="mpRash">Maculopapular rash</label>
+                        <input type="checkbox" id="noneCutaneous" name="cutaneous" value="noneCutaneous">
+                        <label for="noneCutaneous">No cutaneous symptoms</label>
+                        <input type="checkbox" id="cannotRememberCutaneous" name="cutaneous" value="cannotRememberCutaneous">
+                        <label for="cannotRememberCutaneous">Cannot remember</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <label for="rashDuration">How long did the rash take to resolve?</label>
+                    <select id="rashDuration" name="rashDuration" required>
+                        <option value="">Select...</option>
+                        <option value="0-3days">0-3 days</option>
+                        <option value="3-7days">3-7 days</option>
+                        <option value="7+days">7+ days</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="adrenaline">Was adrenaline administered for the reaction?</label>
+                    <select id="adrenaline" name="adrenaline" required>
+                        <option value="">Select...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>High-Risk Conditions</legend>
+                <div class="question">
+                    <label for="redFlagConditions">Red flag conditions:</label>
+                    <div>
+                        <input type="checkbox" id="scar" name="redFlagConditions" value="scar">
+                        <label for="scar">SCAR (SJS/TEN, DRESS, AGEP)</label>
+                        <input type="checkbox" id="ulceration" name="redFlagConditions" value="ulceration">
+                        <label for="ulceration">Ulceration</label>
+                        <input type="checkbox" id="peeling" name="redFlagConditions" value="peeling">
+                        <label for="peeling">Peeling</label>
+                        <input type="checkbox" id="mucosal" name="redFlagConditions" value="mucosal">
+                        <label for="mucosal">Mucosal involvement</label>
+                        <input type="checkbox" id="organInvolvement" name="redFlagConditions" value="organInvolvement">
+                        <label for="organInvolvement">Organ involvement (abnormal LFTs, UECs, FBC, pancytopaenia)</label>
+                        <input type="checkbox" id="noneRedFlag" name="redFlagConditions" value="noneRedFlag">
+                        <label for="noneRedFlag">No</label>
+                        <input type="checkbox" id="cannotRememberRedFlag" name="redFlagConditions" value="cannotRememberRedFlag">
+                        <label for="cannotRememberRedFlag">Cannot remember</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>High-Risk Comorbidities</legend>
+                <div class="question">
+                    <label for="comorbidities">Select any high-risk comorbidities:</label>
+                    <div>
+                        <input type="checkbox" id="asthma" name="comorbidities" value="asthma">
+                        <label for="asthma">Untreated asthma</label>
+                        <input type="checkbox" id="cardiorespiratory" name="comorbidities" value="cardiorespiratory">
+                        <label for="cardiorespiratory">Uncontrolled/deconditioned cardiorespiratory disease (COPD, heart failure)</label>
+                        <input type="checkbox" id="smoker" name="comorbidities" value="smoker">
+                        <label for="smoker">Heavy smoker</label>
+                        <input type="checkbox" id="noneComorbidities" name="comorbidities" value="noneComorbidities">
+                        <label for="noneComorbidities">No</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Additional Information</legend>
+                <div class="question">
+                    <label for="gastrointestinalSymptoms">Gastrointestinal Symptoms:</label>
+                    <select id="gastrointestinalSymptoms" name="gastrointestinalSymptoms" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="thrush">Thrush:</label>
+                    <select id="thrush" name="thrush" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="otherAdverseEvent">Other Adverse Event (not IgE mediated):</label>
+                    <select id="otherAdverseEvent" name="otherAdverseEvent" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="question">
+                    <label for="toleratedCulpritDrug">Evidence of having tolerated culprit drug since reaction:</label>
+                    <select id="toleratedCulpritDrug" name="toleratedCulpritDrug" required>
+                        <option value="">Select...</option>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </fieldset>
+            <button type="button" onclick="calculateRisk()" class="calculate-button">Calculate Risk</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
